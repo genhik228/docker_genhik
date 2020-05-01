@@ -1,0 +1,237 @@
+<!--{% load static %}-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <title>Django blog</title>-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="{% static 'css/base.css' %}">-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <header>-->
+<!--      <h1><a href="{% url 'home' %}">Django blog</a></h1>-->
+<!--    </header>-->
+<!--    <div>-->
+<!--      {% block content %}-->
+<!--      {% endblock content %}-->
+<!--    </div>-->
+<!--  </body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="//search4faces.com/img/favicon/favicon-16x16.png">
+<!--    bost 3.4-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">-->
+<!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css" integrity="sha384-jzngWsPS6op3fgRCDTESqrEJwRKck+CILhJVO5VvaAZCq8JYf8HsR/HPpBOOPZfR" crossorigin="anonymous">-->
+<!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>-->
+    <!--    bost 3.4-->
+
+
+    <!--	navigator-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--	navigator-->
+
+
+    <!-- Bootstrap CSS -->
+<!--    <link href="{% static '/cinema/bootstrap/css/bootstrap.min.css' %}"  rel="stylesheet" >-->
+<!--	<link  href="{% static '/cinema/bootstrap-fileinput/css/fileinput.min.css' %}"  rel="stylesheet" >-->
+<!--	<link rel="stylesheet" src="{% static '/cinema/css/style.css' %}" >-->
+
+
+    <title>Home Kiber Search</title>
+    <style>
+        .container {
+        margin-top:25px;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+{{ paaath }}
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+ 		<div class="navbar-header">
+ 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+ 			</button>
+ 			<a class="navbar-brand" href="{% url 'home' %}">
+				KIBER SEARCH
+			</a>
+ 		</div>
+ 		<div id="navbar" class="navbar-collapse collapse">
+ 			<ul class="nav navbar-nav">
+				 <li >
+					 <a href="{% url 'home' %}">Home</a>
+				 </li>
+				 <li>
+					 <a href="{% url 'search' %}">Search</a>
+				 </li>
+				 <li>
+					 <a href="">History Search</a>
+				 </li>
+                <li>
+					 <a href="">How using</a>
+				 </li>
+<!--                <li class="dropdown">-->
+<!--                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li><a href="#">Action</a></li>-->
+<!--                  <li><a href="#">Another action</a></li>-->
+<!--                  <li><a href="#">Something else here</a></li>-->
+<!--                  <li role="separator" class="divider"></li>-->
+<!--                  <li class="dropdown-header">Nav header</li>-->
+<!--                  <li><a href="#">Separated link</a></li>-->
+<!--                  <li><a href="#">One more separated link</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+                <li>
+                    <a class="btn btn-link btn-outline btn-circle"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
+                </li>
+
+                <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse2">
+                 <form class="navbar-form navbar-right form-inline" role="form" method="post">
+                     {% csrf_token %}
+                    <div class="form-group">
+                     <label class="sr-only" for="Email">Email</label>
+                        <input type="email" class="form-control" id="Email"  name="Email" placeholder="Email" autofocus required />
+                     </div>
+                     <div class="form-group">
+                     <label class="sr-only" for="Password">Password</label>
+                        <input type="password"  name="password" class="form-control" id="Password" placeholder="Password" required />
+                     </div>
+                     <button type="submit" class="btn btn-success">Sign in</button>
+                     <a class="btn btn-success" href="" role="button">Sing Up</a>
+                 </form>
+                </div>
+<!--				 <li class="dropdown">-->
+<!-- 					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+<!--					<ul class="dropdown-menu">-->
+<!--						 <li><a href="#">Action</a></li>-->
+<!--						 <li><a href="#">Another action</a></li>-->
+<!--						 <li><a href="#">Something else here</a></li>-->
+<!--						 <li role="separator" class="divider"></li>-->
+<!--						 <li class="dropdown-header">Nav header</li>-->
+<!--						 <li><a href="#">Separated link</a></li>-->
+<!--						<li><a href="#">One more separated link</a></li>-->
+<!--					 </ul>-->
+<!-- 				</li>-->
+
+                </ul>
+	</div>
+</nav>
+<div class="container">
+	<div class="jumbotron">
+        <h1>Kiber Search</h1>
+            <p>Создания системы распознавания лиц, является одной из основных практических задач, над решением которой работают программисты всего мира. Распознавание лиц используется в различных сферах человеческой деятельности. Это помогает решать проблемы правового характера, а также проводить анализ поведенческих факторов. </p>
+            <p>
+               <a class="btn btn-lg btn-primary" href="" role="button">Start Search</a>
+            </p>
+      </div>
+
+    <div class="page-header">
+        <h1>Распозование лиц</h1>
+    </div>
+<!--        {% load static %}-->
+<!--    <img src="{% static 'face/face-recognition.jpeg' %}" alt="Image" class="img-thumbnail" alt="Cinque Terre">-->
+
+
+    <div class="page-header">
+        <h1>Что у нас есть?</h1>
+        <h3>
+	Всего лиц в базе: <span class="italic_bold">49,669,244 (просчитано 4.25% от всех)</span>.<br>
+	Время сбора: <span class="italic_bold">с 11-2019 по 12-2019</span>.<br>
+	Процент успешных поисков: <span class="italic_bold">24.01%</span>.<br>
+	</h3>
+
+      </div>
+
+
+
+<!--<div class="container content">-->
+<!--        <form class="form-horizontal" method="POST" enctype="multipart/form-data" >-->
+
+<!--            {% csrf_token %}-->
+
+<!--            <div class="form-group">-->
+<!--                <label for="name" class="col-sm-2 control-label">Ссылка на фотографию</label>-->
+<!--                <div class="col-sm-8">-->
+<!--                    <input type="text" id="name" class="form-control" name="link" placeholder="Ссылка на фотографию">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--             <label for="name" class="col-sm-2 control-label">Количество похожих людей</label>-->
+<!--                    <div class="col-sm-8">-->
+<!--                         <select class="form-control">-->
+<!--                             <option selected>Введите число</option>-->
+<!--                                 <option>10</option>-->
+<!--                                 <option>20</option>-->
+<!--                                 <option>30</option>-->
+<!--                                 <option>40</option>-->
+<!--                                 <option>50</option>-->
+<!--                         </select>-->
+<!--                        </div>-->
+<!--                </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="name" class="col-sm-2 control-label">Индентификатор пользователя</label>-->
+<!--                <div class="col-sm-8">-->
+<!--                    <input type="text" id="name" class="form-control" name="id_user" placeholder="Индентификатор пользователя">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <label for="file" class="col-sm-2 control-label">Файл</label>-->
+<!--                <div class="col-sm-8">-->
+<!--                    <input type="file" name="file" id="file">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <div class="col-sm-offset-2 col-sm-8">-->
+<!--                    <button type="submit" id="submit" class="btn btn-primary">Поиск похожих фотографий</button>-->
+<!--                <div>-->
+<!--            </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--	</div>-->
+
+<!--	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--	<script src="{% static '/cinema/bootstrap-fileinput/js/fileinput.min.js' %}"></script>-->
+<!--	<script src="{% static '/cinema/bootstrap/js/bootstrap.min.js' %}"></script>-->
+	<script>
+$(function(){
+	$("#file").fileinput({
+		showCaption: false,
+		browseLabel: 'Выберите файл...',
+		browseClass: 'btn btn-success'
+	});
+});
+	</script>
+
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+  </body>
+</html>
